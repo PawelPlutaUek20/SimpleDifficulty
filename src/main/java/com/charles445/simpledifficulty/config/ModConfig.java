@@ -57,7 +57,7 @@ public class ModConfig
 		///
 		@Config.Comment("Whether thirst is enabled.")
 		@Config.Name("ThirstEnabled")
-		public boolean thirstEnabled = true;
+		public boolean thirstEnabled = false;
 		
 		@Config.Comment("Whether the player is allowed to drink from normal water blocks.")
 		@Config.Name("ThirstDrinkBlocks")
@@ -73,7 +73,7 @@ public class ModConfig
 		
 		@Config.Comment("Whether temperature is enabled.")
 		@Config.Name("TemperatureEnabled")
-		public boolean temperatureEnabled = true;
+		public boolean temperatureEnabled = false;
 		
 		@Config.Comment("Whether temperature tile entities are enabled.")
 		@Config.Name("TemperatureTileEntities")
@@ -198,7 +198,7 @@ public class ModConfig
 			@Config.Comment("Underground Effect Cutoff - Y Level where surface temperature effects do nothing")
 			@Config.Name("UndergroundEffectCutoff")
 			@Config.RangeInt(min=0, max=64)
-			public int undergroundEffectCutoff = 30;
+			public int undergroundEffectCutoff = 0;
 			
 			@Config.Comment("Time Temperature Multiplier - How strongly time affects temperature")
 			@Config.Name("TimeMultiplier")
@@ -220,7 +220,7 @@ public class ModConfig
 			@Config.Comment("Time Biome Temperature Multiplier - How strongly different biomes effect day/night temperature")
 			@Config.Name("TimeBiomeMultiplier")
 			@Config.RangeDouble(min=1.0,max=1000000.0)
-			public double timeBiomeMultiplier = 1.25d;
+			public double timeBiomeMultiplier = 1.0d;
 
 			@Config.Comment("Snow Temperature Value - Effect of snowfall on temperature")
 			@Config.Name("SnowValue")
@@ -240,7 +240,7 @@ public class ModConfig
 			@Config.Comment("Temperature Max Speed - Maximum time in ticks for a player temperature change")
 			@Config.Name("TemperatureTickMax")
 			@Config.RangeInt(min=20)
-			public int temperatureTickMax = 400;
+			public int temperatureTickMax = 20;
 			
 			@Config.Comment("Temperature Min Speed - Minimum time in ticks for a player temperature change")
 			@Config.Name("TemperatureTickMin")
@@ -250,7 +250,7 @@ public class ModConfig
 			@Config.Comment("TemperatureTickDangerBoost - How much faster in ticks temperature changes happen when escaping dangerous temperatures")
 			@Config.Name("TemperatureTickDangerBoost")
 			@Config.RangeInt(min=0)
-			public int temperatureTickDangerBoost = 60;
+			public int temperatureTickDangerBoost = 0;
 			
 			@Config.Comment("Enchantment Temperature Change - Effect of temperature enchantments")
 			@Config.Name("EnchantmentTemperature")
@@ -260,30 +260,30 @@ public class ModConfig
 			@Config.Comment("Heater Temperature Change - Strength of heaters / chillers")
 			@Config.Name("HeaterTemperature")
 			@Config.RangeInt(min=-1000000, max=1000000)
-			public int heaterTemperature = 10;
+			public int heaterTemperature = 0;
 			
 			@Config.Comment("Heater Full Power Range - Distance where a heater / chiller starts to lose strength")
 			@Config.Name("HeaterFullPowerRange")
 			@Config.RangeDouble(min=0, max=50)
-			public double heaterFullPowerRange = 16.0d;
+			public double heaterFullPowerRange = 0.0d;
 			
 			@Config.Comment("Heater Max Range - Distance where a heater / chiller has no effect")
 			@Config.Name("HeaterMaxRange")
 			@Config.RangeDouble(min=0, max=50)
-			public double heaterMaxRange = 32.0d;
+			public double heaterMaxRange = 0.0d;
 			
 			@Config.Comment("Blocks Tiles Separate - Whether blocks and tile entities should have temperature calculated separately, for example, if this is set to true heaters and campfires will both add their heat individually")
 			@Config.Name("BlocksTilesSeparate")
-			public boolean blocksTilesSeparate = true;
+			public boolean blocksTilesSeparate = false;
 			
 			@Config.Comment("Stacking Temperature - Whether multiple blocks in a vicinity should combine their effect")
 			@Config.Name("StackingTemperature")
-			public boolean stackingTemperature = true;
+			public boolean stackingTemperature = false;
 			
 			@Config.Comment("Stacking Temperature Limit - How much more extreme block temperature can be from stacking temperature")
 			@Config.Name("StackingTemperatureLimit")
 			@Config.RangeDouble(min=0, max = 1000000)
-			public double stackingTemperatureLimit = 3;
+			public double stackingTemperatureLimit = 0;
 			
 			@Config.Comment("Temperature Damage Scaling - Extra damage from hyperthermia and hypothermia over time")
 			@Config.Name("TemperatureDamageScaling")
@@ -293,7 +293,7 @@ public class ModConfig
 			@Config.Comment("TemperatureDamageDuration - Duration in ticks of hypothermia and hyperthermia")
 			@Config.Name("TemperatureDamageDuration")
 			@Config.RangeInt(min=0)
-			public int temperatureDamageDuration = 400;
+			public int temperatureDamageDuration = 00;
 			
 			
 		}
@@ -305,52 +305,52 @@ public class ModConfig
 			@Config.Comment("Thirst Exhaustion Limit - How exhausted the player must get before they lose thirst.")
 			@Config.Name("ThirstExhaustionLimit")
 			@Config.RangeDouble(min=1.0)
-			public double thirstExhaustionLimit = 4.0d;
+			public double thirstExhaustionLimit = 1.0d;
 			
 			@Config.Comment("Thirsty Strength - Strength of the Thirsty Effect")
 			@Config.Name("ThirstyStrength")
 			@Config.RangeDouble(min=0.0)
-			public double thirstyStrength = 0.025d;
+			public double thirstyStrength = 0.0d;
 			
 			@Config.Comment("Thirst Attacking - How exhausting attacking enemies is")
 			@Config.Name("ThirstAttacking")
 			@Config.RangeDouble(min=0.0)
-			public double thirstAttacking = 0.3d;
+			public double thirstAttacking = 0.0d;
 			
 			@Config.Comment("Thirst Break Block - How exhausting breaking blocks is")
 			@Config.Name("ThirstBreakBlock")
 			@Config.RangeDouble(min=0.0)
-			public double thirstBreakBlock = 0.025d;
+			public double thirstBreakBlock = 0.0d;
 			
 			@Config.Comment("Thirst Sprint Jump - How exhausting jumping while sprinting is")
 			@Config.Name("ThirstSprintJump")
 			@Config.RangeDouble(min=0.0)
-			public double thirstSprintJump = 0.8d;
+			public double thirstSprintJump = 0.0d;
 			
 			@Config.Comment("Thirst Jump - How exhausting jumping without sprinting is")
 			@Config.Name("ThirstJump")
 			@Config.RangeDouble(min=0.0)
-			public double thirstJump = 0.2d;
+			public double thirstJump = 0.0d;
 			
 			@Config.Comment("Thirst Base Movement - How exhausting any kind of movement is")
 			@Config.Name("ThirstBaseMovement")
 			@Config.RangeDouble(min=0.0)
-			public double thirstBaseMovement = 0.01d;
+			public double thirstBaseMovement = 0.0d;
 			
 			@Config.Comment("Thirst Swimming Movement - How exhausting swimming movement is")
 			@Config.Name("ThirstSwimmingMovement")
 			@Config.RangeDouble(min=0.0)
-			public double thirstSwimmingMovement = 0.015d;
+			public double thirstSwimmingMovement = 0.0d;
 			
 			@Config.Comment("Thirst Sprinting Movement - How exhausting sprinting movement is")
 			@Config.Name("ThirstSprintingMovement")
 			@Config.RangeDouble(min=0.0)
-			public double thirstSprintingMovement = 0.1d;
+			public double thirstSprintingMovement = 0.0d;
 			
 			@Config.Comment("Thirst Walking Movement - How exhausting walking movement is")
 			@Config.Name("ThirstWalkingMovement")
 			@Config.RangeDouble(min=0.0)
-			public double thirstWalkingMovement = 0.01d;
+			public double thirstWalkingMovement = 0.0d;
 
 			@Config.Comment("Whether the player can get parasites from drinking unclean water")
 			@Config.Name("ThirstParasites")
@@ -359,22 +359,22 @@ public class ModConfig
 			@Config.Comment("The chance of parasites from drinking unclean water")
 			@Config.Name("ThirstParasitesChance")
 			@Config.RangeDouble(min=0.0, max=1.0)
-			public double thirstParasitesChance = 0.04d;
+			public double thirstParasitesChance = 0.0d;
 			
 			@Config.Comment("The duration parasites last")
 			@Config.Name("ThirstParasitesDuration")
 			@Config.RangeInt(min=1)
-			public int thirstParasitesDuration = 1200;
+			public int thirstParasitesDuration = 1;
 			
 			@Config.Comment("How strongly parasites make a player hungry (0.005 is same speed as hunger, 0 to disable")
 			@Config.Name("ThirstParasitesHunger")
 			@Config.RangeDouble(min=0.0)
-			public double thirstParasitesHunger = 0.02d;
+			public double thirstParasitesHunger = 0.00d;
 			
 			@Config.Comment("The chance a player takes damage from parasites (1 is poison speed, 0 to disable)")
 			@Config.Name("ThirstParasitesDamage")
 			@Config.RangeDouble(min=0.0, max=1.0)
-			public double thirstParasitesDamage = 0.2d;
+			public double thirstParasitesDamage = 0.0d;
 			
 			@Config.Comment("Thirst Damage Scaling - Extra damage from dehydration over time")
 			@Config.Name("ThirstDamageScaling")
@@ -410,11 +410,11 @@ public class ModConfig
 		
 		@Config.Comment("Whether the alternate temperature display is enabled")
 		@Config.Name("AlternateTemperature")
-		public boolean alternateTemp = true;
+		public boolean alternateTemp = false;
 		
 		@Config.Comment("Whether to draw thirst saturation on the HUD")
 		@Config.Name("DrawThirstSaturation")
-		public boolean drawThirstSaturation = true;
+		public boolean drawThirstSaturation = false;
 		
 		@Config.Comment("Debug mode for clients")
 		@Config.Name("Client DebugMode")
@@ -434,7 +434,7 @@ public class ModConfig
 		
 		@Config.Comment("Enables chiller and heater particles")
 		@Config.Name("HeaterParticles")
-		public boolean heaterParticles = true;
+		public boolean heaterParticles = false;
 		
 		public class ConfigClientThermometer
 		{
@@ -444,7 +444,7 @@ public class ModConfig
 			
 			@Config.Comment("Whether thermometers in your inventory will display on your HUD")
 			@Config.Name("HUDThermometer")
-			public boolean hudThermometer = true;
+			public boolean hudThermometer = false;
 			
 			@Config.Comment("How far left or right the Thermometer HUD is from the default position")
 			@Config.Name("XOffset")
